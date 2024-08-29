@@ -1,0 +1,36 @@
+@import url(./userlist.scss);
+
+.home-page-main{
+    width: 80%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 4rem 6rem;
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        .speaker-text{
+            color: #575757;
+            font-weight: 600;
+            font-size: 14px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 21px;
+            margin-bottom: 10px;
+        }
+        .speaker-button{
+            background-color: #E4875D;
+            color: white;
+              border-radius: 10px;
+             padding: 
+             0px, 8px, 0px, 8px;
+             height: 42px;
+             width: 120px;
+             border: none;
+             font-weight: 600;
+             font-size: 14px;
+             font-family: 'Plus Jakarta Sans', sans-serif;
+             line-height: 21px;
+           cursor: pointer;
+        }
+    }
+}
