@@ -11,6 +11,10 @@
     width: 600px;
     height: 100%;
     border-radius: 12px 0px 0px 12px;
+    animation: smartAnimate 300ms ease-in-out;
+
+    
+
     .header {
       height: 75px;
       width: 100%;
@@ -79,6 +83,17 @@
       width: 100%;
       overflow-y: scroll;
       padding: 24px;
+      &::-webkit-scrollbar {
+        width: 1px;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        background-color: white;
+      }
+    
+      &::-webkit-scrollbar-track {
+        background-color: transparent; /* Optional: customize the track color */
+      }
       .speaker-box {
         width: 100%;
         height: 122px;
@@ -88,16 +103,21 @@
         margin-bottom: 8px;
         background-color: #FFFFFF;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: center;
-      
+        align-items: start;
+       position: relative;
+       &.active{
+        border: 1px solid #4CBB3E;
+
+       }
         .user-details {
           display: flex;
           align-items: center;
       
           .user-avatar {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background-color: #F0F0F0; 
             margin-right: 16px;
@@ -122,19 +142,56 @@
           
         }
         .edit-button {
-          button {
-            background-color: transparent;
-            border: none;
-            color: #FF7043;
+          display: flex;
+          align-items: center;
+          margin-left: 64px;
+
+          .edit-icon{
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+          margin-right: 4px;
+          }
+          .subtitle2 {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: 500;
             font-size: 14px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
+            line-height: 21px;
+            letter-spacing: 0.2%;
+            color: #E4875D;
+           
       
             
           }
         }
-      
+        .checkbox-container {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          width: 18px;
+          height: 18px;
+          cursor: pointer; 
+        }
+        
+        .speaker-checkbox {
+          width: 18px;
+          height: 18px;
+          cursor: pointer; 
+          appearance: auto; 
+          accent-color: green; 
+          
+          background-color: #f0f0f0;
+          border: 2px solid #636363;
+          border-radius: 2px; 
+        
+          &:checked {
+            background-color: #4CBB3E; 
+            border-color: #4CBB3E; 
+          }
+        }
+        
+        
+
        
       }
       
@@ -158,7 +215,6 @@
         gap: 10px;
         .btn {
           height: 42px;
-          cursor: pointer;
           border-radius: 10px;
           padding: 0px 8px;
           border: none;
@@ -171,6 +227,12 @@
             background-color: #e9e9e9;
             color: #8f8f8f;
             width: 61px;
+            &.active{
+              background-color: #E4875D;
+              color: #fff;
+              cursor: pointer;
+
+            }
           }
           &.cancel {
             color: #e4875d;
@@ -187,6 +249,17 @@
         line-height: 21px;
         cursor: pointer;
       }
+    }
+  }
+  
+  @keyframes smartAnimate {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
     }
   }
 }
